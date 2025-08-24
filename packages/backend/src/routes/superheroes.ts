@@ -27,7 +27,7 @@ router.get('/:superheroId', validateParams(superheroParamsSchema), async (req, r
     const superheroId = req.validatedParams.superheroId
     const superhero = await getSuperheroById(superheroId)
 
-    if (superhero) {
+    if (!superhero) {
         return sendNotFoundError(res, 'Superhero not found')
     }
 
@@ -72,7 +72,7 @@ router.post('/:superheroId/images', validateParams(superheroParamsSchema), valid
 })
 
 router.put('/:superheroId/images/:imageId', validateParams(superheroImageParamsSchema), validateBody(superheroImageSchema), async (req, res) => {
-    const { superheroId, imageId } = req.validatedParams.imageId
+    const { superheroId, imageId } = req.validatedParams
     const data = req.validatedBody
     const updatedSuperheroImage = await updateSuperheroImage(superheroId, imageId, data)
 
@@ -88,7 +88,7 @@ router.delete('/:superheroId/images/:imageId', validateParams(superheroImagePara
     const isDeleted = await deleteSuperheroImage(imageId)
 
     if (!isDeleted) {
-        return sendNotFoundError(res, 'Image not found')
+        return sendNotFoundError(res, 'Superhero image not found')
     }
 
     return sendNoContent(res)

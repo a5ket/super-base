@@ -1,12 +1,12 @@
+import express from 'express'
+import multer from 'multer'
+import { imageConstraints } from 'shared'
 import { createImage, deleteImage, getImageById } from '../db/images'
 import { sendData, sendError, sendErrorWithDetails, sendNoContent, sendNotFoundError } from '../responses'
 import { getImageUrl, saveImage } from '../static'
 import { validateImage } from '../validation/files'
 import { validateParams } from '../validation/middlewares'
 import { imageParamsSchema } from '../validation/schemas'
-import express from 'express'
-import multer from 'multer'
-import { imageConstraints } from 'shared'
 
 
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: imageConstraints.size } })
@@ -33,22 +33,22 @@ router.post('/', upload.single('image'), async (req, res) => {
     }
 
     const createdImage = await createImage({ mimeType })
-    let imageUrl: string
+    let imageFilename: string
 
     try {
-        imageUrl = await saveImage(createdImage, req.file.buffer)
+        imageFilename = await saveImage(createdImage, req.file.buffer)
+
+        return sendData(res, {
+            id: createdImage.id,
+            url: getImageUrl(createdImage),
+            createdAt: createdImage.createdAt
+        })
     } catch (error) {
         console.error('Error saving the image', error)
 
         await deleteImage(createdImage.id)
         return sendError(res, 'Error saving the image')
     }
-
-    return sendData(res, {
-        id: createdImage.id,
-        url: imageUrl,
-        createdAt: createdImage.createdAt
-    })
 })
 
 
@@ -62,11 +62,11 @@ router.get('/:imageId', validateParams(imageParamsSchema), async (req, res) => {
 
     const imageUrl = getImageUrl(image)
 
-    return {
+    return sendData(res, {
         id: image.id,
         url: imageUrl,
         createdAt: image.createdAt
-    }
+    })
 })
 
 

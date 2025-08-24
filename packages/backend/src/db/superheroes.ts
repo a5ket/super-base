@@ -36,7 +36,8 @@ export async function createSuperhero({ nickname, realName, originDescription, s
 
 export async function getSuperheroById(superheroId: string) {
     return db.query.superheroes.findFirst({
-        where: eq(schema.superheroes.id, superheroId)
+        where: eq(schema.superheroes.id, superheroId),
+        with: { images: true }
     })
 }
 
