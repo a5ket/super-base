@@ -1,0 +1,180 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: grid;
+    place-items: center;
+    z-index: 50;
+}
+
+.modal {
+    background: var(--background-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header h3 {
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.content {
+    padding: 16px 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.label {
+    font-weight: 600;
+    color: var(--light-text);
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.divider {
+    text-align: center;
+    color: var(--light-text);
+    margin: 10px 0;
+}
+
+.preview {
+    margin-top: 12px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--background-color);
+}
+
+.preview img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-color);
+}
+
+.cancel {
+    background: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.save {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.error {
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 6px;
+}
+
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: 6px;
+    background: var(--background-color);
+    color: var(--light-text);
+    cursor: pointer;
+}
+
+.dropzoneactive {
+    border-color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.dropzonereject {
+    border-color: var(--error-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.viewer {
+    background: var(--background-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.viewerBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    padding: 0;
+}
+
+.viewerImage {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+}
+
+.viewerCaption {
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.viewerActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.viewerClose {
+    background: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}

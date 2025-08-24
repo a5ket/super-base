@@ -1,0 +1,172 @@
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--light-text);
+}
+
+.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #fca5a5;
+}
+
+.backbutton {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.backbutton:hover {
+    background-color: #111827;
+    border-color: #4b5563;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.info {
+    margin-bottom: 1rem;
+}
+
+.infoSection {
+    margin-top: 0.5rem;
+}
+
+.infoContainer {
+    margin-bottom: 1rem;
+}
+
+.heroSection {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonContainer {
+    margin-top: 2rem;
+}
+
+.primaryButton {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+}
+
+.primaryButton:hover {
+    background-color: #0d6efd;
+}
+
+.secondaryButton {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.secondaryButton:hover {
+    background-color: rgba(124, 58, 237, 0.1);
+}
+
+.featuresContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.featureCard {
+    background-color: #1f2937;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.featureCard h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.featureCard p {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .featuresContainer {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .heroSection {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+}
