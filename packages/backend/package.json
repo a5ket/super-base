@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "migrate:generate": "drizzle-kit generate",
-    "migrate:push": "drizzle-kit push"
+    "migrate:push": "drizzle-kit push",
+    "seed": "tsx drizzle/seed.ts"
   },
   "keywords": [],
   "author": "",
