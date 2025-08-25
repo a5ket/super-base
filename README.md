@@ -2,45 +2,57 @@
 
 A full-stack application for managing superhero data with images.
 
-## Quick Start
+<img width="3024" height="1716" alt="image" src="https://github.com/user-attachments/assets/df566bde-641c-442f-84e0-0af1914e7a55" />
 
-### Development Setup
+<img width="3024" height="1712" alt="image" src="https://github.com/user-attachments/assets/b8d4fe48-5f87-48ad-ae20-783e46456a3a" />
 
-1. Start the PostgreSQL database:
-   ```bash
-   docker-compose up -d
-   ```
+## Development Setup
 
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+### 1. Database Setup
 
-3. Set up environment variables:
-   ```bash
-   # Copy example env files
-   cp packages/backend/.env.example packages/backend/.env
-   cp packages/frontend/.env.example packages/frontend/.env
-   ```
+Start the PostgreSQL database using Docker:
 
-4. Run database migrations and seed data:
-   ```bash
-   pnpm --filter backend migrate:push
-   pnpm --filter backend seed
-   ```
+```bash
+docker-compose up -d
+```
 
-5. Start backend and frontend in development mode:
-   ```bash
-   # In one terminal
-   pnpm --filter backend dev
-   
-   # In another terminal
-   pnpm --filter frontend dev
-   ```
+This will start a PostgreSQL instance on port 5432.
 
-### Access the Application
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:3000
+### 2. Backend Setup
+
+```bash
+# Navigate to backend package
+cd packages/backend
+
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Run migrations and seed data
+pnpm run migrate:push
+pnpm run seed
+
+# Start the development server
+pnpm run dev
+```
+
+### 3. Frontend Setup
+
+```bash
+# Navigate to frontend package
+cd packages/frontend
+
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Start the development server
+pnpm run dev
+```
 
 ## Project Structure
 - `backend`: Express API with PostgreSQL database
