@@ -15,23 +15,5 @@ services:
       timeout: 10s
       retries: 3
 
-  backend:
-    build:
-      context: .
-      dockerfile: packages/backend/Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:password@postgres:5432/superbase
-      - APP_PORT=3000
-      - UPLOAD_DIR=/app/uploads
-      - BASE_URL=http://localhost:3000
-    volumes:
-      - uploads_data:/app/uploads
-    depends_on:
-      postgres:
-        condition: service_healthy
-
 volumes:
   postgres_data:
-  uploads_data:
